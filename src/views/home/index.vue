@@ -4,7 +4,6 @@ import type { VxeTablePropTypes } from 'vxe-table'
 import { checkUpdate, installUpdate } from '@tauri-apps/api/updater'
 import { relaunch } from '@tauri-apps/api/process'
 
-// globalThis.checkUpdate = checkUpdate
 interface RowVO {
   id: number
   name: string
@@ -24,15 +23,11 @@ const tableData = ref<RowVO[]>([
 ])
 
 onMounted(() => {
-  initUpdate()
+  // initUpdate()
 })
 
+// eslint-disable-next-line unused-imports/no-unused-vars
 async function initUpdate() {
-  // const unlisten = await onUpdaterEvent(({ error, status }) => {
-  // // This will log all updater events, including status updates and errors.
-  //   console.log('Updater event', error, status)
-  // })
-
   try {
     const { shouldUpdate, manifest } = await checkUpdate()
     globalThis.console.log('888', shouldUpdate, manifest)
