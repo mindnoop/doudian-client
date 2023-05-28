@@ -18,6 +18,11 @@
         "request": true
       }
     },
+    "systemTray": {
+      "iconPath": "icons/tray-icon.png",
+      "iconAsTemplate": true,
+      "menuOnLeftClick": false
+    },
     "bundle": {
       "active": true,
       "icon": [
@@ -31,7 +36,26 @@
       "targets": "all"
     },
     "security": {
-      "csp": null
+      "csp": null,
+      "dangerousRemoteDomainIpcAccess": [
+        {
+          "windows": [
+            "core",
+            "main",
+            "tray"
+          ],
+          "domain": "chat.mindnoop.com",
+          "enableTauriAPI": true
+        },
+        {
+          "windows": [
+            "core",
+            "main"
+          ],
+          "domain": "www.buyid8.com",
+          "enableTauriAPI": true
+        }
+      ]
     },
     "updater": {
       "active": true,
